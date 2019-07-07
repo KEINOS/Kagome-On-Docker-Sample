@@ -2,7 +2,7 @@
 
 このリポジトリは以下の記事のためのサンプルのリポジトリです。
 
-- [Kagome on Docker で日本語形態素解析 API を手軽に利用する（わかち書き解析）](https://qiita.com/KEINOS/items/8b5e3a251430db89de3f)
+- [Kagome on Docker で日本語形態素解析 API を手軽に利用する（わかち書き解析）](https://qiita.com/KEINOS/items/8b5e3a251430db89de3f) @ Qiita
 
 形態素解析 `kagome` の WebAPI 用 Docker コンテナを、他のコンテナからリクエストするサンプルが公開されています。
 
@@ -128,6 +128,6 @@
 
 詳しくは以下のファイルの中身をご覧ください。
 
-- ./docker-compose.yml
-- ./Containers/cont1-php/Dockerfile
-- ./Containers/cont1-php/src/index.php
+- ./[docker-compose.yml](./docker-compose.yml)
+- ./Containers/cont1-php/[Dockerfile](./Containers/cont1-php/Dockerfile)
+- ./Containers/cont1-php/src/[index.php](./Containers/cont1-php/src/index.php)

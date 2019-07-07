@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  check:
+    container_name: check
+    image: keinos/alpine:latest
+  php:
+    container_name: php
+    build: ./Containers/cont1-php/
+    depends_on:
+      - kagome
+    command: -S 0.0.0.0:80 index.php
+    ports:
+      - "8888:80"
+  kagome:
+    container_name: kagome
+    image: ikawaha/kagome:latest
+    command: server -http=":80"

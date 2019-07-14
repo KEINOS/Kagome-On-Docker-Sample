@@ -1,12 +1,15 @@
 # Sample Usage of Kagome API on Docker from PHP7 Container
 
-このリポジトリは以下の記事のためのサンプルのリポジトリです。
+このリポジトリは、形態素解析 `kagome` の WebAPI 用 Docker コンテナを、他のコンテナからリクエストするサンプルが公開されています。以下の記事のために用意されたサンプルのリポジトリです。
 
 - [Kagome on Docker で日本語形態素解析 API を手軽に利用する（わかち書き解析）](https://qiita.com/KEINOS/items/8b5e3a251430db89de3f) @ Qiita
 
-形態素解析 `kagome` の WebAPI 用 Docker コンテナを、他のコンテナからリクエストするサンプルが公開されています。
+## 基本動作
 
-具体的には、`kagome` のコンテナの WebAPI に PHP7 のコンテナから HTTP リクエストして、その解析結果を PHP のビルトインサーバーで表示します。
+1. `docker-compose up` すると `kagome` と `php` ２つのコンテナが起動します。`kagome` が形態素解析 API で `php` がフロントエンドです。
+2. `http://localhost:8888/` にアクセスすると `php` のコンテナが `kagome` にリクエストし、その解析結果を表示します。
+
+詳しくは、下記「Usage」および「具体的な動作」をご覧ください。
 
 ## ディレクトリ構成
 
@@ -24,7 +27,7 @@
 
 ## Usage
 
-1. リポジトリをローカルに `clone` もしくはコピーして、そのディレクトリに入り、以下を実行。<br>`kagome` と `php` のコンテナがバックグランドで起動します。
+1. リポジトリをローカルに `clone` もしくはコピーして、そのディレクトリに入り、`docker-compose up -d` を実行します。<br>これにより、`kagome` と `php` のコンテナがバックグランドで起動します。
 
     ```shellsession
     $ docker-compose up -d
@@ -33,7 +36,7 @@
     Creating php    ... done
     ```
 
-2. ブラウザから `http://localhost:8888/` にアクセスして、形態素解析の結果が以下のように表示されれば成功。
+2. ブラウザから `http://localhost:8888/` にアクセスして、形態素解析の結果が以下のように表示されれば成功です。
 
 <details><summary>ブラウザの出力結果</summary><div><br>
 
